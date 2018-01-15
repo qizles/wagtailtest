@@ -36,5 +36,5 @@ class BlogPage(Page):
         FieldPanel('date'),
         ImageChooserPanel('main_image'),
         FieldPanel('intro'),
-        FieldPanel('body'),
+        FieldPanel('body', classname="full"),
     ]
