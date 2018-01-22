@@ -18,3 +18,39 @@ try:
     from .local import *
 except ImportError:
     pass
+
+
+INSTALLED_APPS = [
+    'home',
+    'search',
+    'blog',
+    'base',
+
+    'wagtail.wagtailforms',
+    'wagtail.wagtailredirects',
+    'wagtail.wagtailembeds',
+    'wagtail.wagtailsites',
+    'wagtail.wagtailusers',
+    'wagtail.wagtailsnippets',
+    'wagtail.wagtaildocs',
+    'wagtail.wagtailimages',
+    'wagtail.wagtailsearch',
+    'wagtail.wagtailadmin',
+    'wagtail.wagtailcore',
+
+    'wagtail.contrib.modeladmin',
+
+    'modelcluster',
+    'taggit',
+
+    'wagtailmenus',
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+
+]
