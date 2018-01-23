@@ -1,24 +1,47 @@
-{% load wagtailcore_tags wagtailimages_tags%}
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+
+            {% comment %}
+            <a id="logo-container" href="#" class="brand-logo"><img class="navlogo"
+                                                                    src="http://localhost:8000/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/"></a>
+                                                                    {% endcomment %}
+
+
+            {% comment %}
+            <a id="logo-container" href="#" class="brand-logo center">{{ navbar|richtext }}</a>
+            {% endcomment %}
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons blue-grey-text">menu</i></a>
+
+            <ul class="left hide-on-med-and-down">
+                <li><img class="navlogo" src="http://localhost:8000/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/"></li>
+                <li><a href="#">Navbar Link</a></li>
+            </ul>
+
+            <ul class="right hide-on-large-only">
+                <ul class="left hide-on-small-and-down">
+                <img class="navlogo" src="http://localhost:8000/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/">
+            </ul>
+                </ul>
+
+            <ul class="right hide-on-med-and-up">
+                <a id="logo-container"  class="brand-logo center blue-text text-darken-4"><nobr><b>CEVEN</b><span class="weak">TRAVEL</span></nobr></a>
+            </ul>
 
 
 
-<nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">{{ navbar|richtext }}</a>
-
-        <a id="logo-container" href="#" class="brand-logo center"><img src="http://localhost:8000/images/JtxJNPJXJmJgPh8skYHB0ARGLIU=/4/height-64/"  ></a>
 
 
 
+        </div>
 
+    </nav>
 
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
+</div>

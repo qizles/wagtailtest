@@ -8,17 +8,27 @@
     <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
     <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
+
+
     <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Parallax Template - Materialize</title>
+        <meta name="description" content="" />
 
-        <!-- CSS  -->
+        <title>{% block title %}CevenTravel - {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
+
+        {# Global stylesheets #}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="{% static 'css/materialize.css' %}" media="screen,projection">
+        <link href="{% static 'css/materialize.css' %}" rel="stylesheet" type="text/css" media="screen,projection">
         <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="{% static 'css/mysite.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
     </head>
 
     <body>

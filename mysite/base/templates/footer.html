@@ -1,47 +1,49 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags wagtailuserbar%}
+{% wagtailuserbar %}
 
 
-
-
-
-
- <footer class="page-footer light-blue lighten-1">
+<footer class="page-footer blue darken-4">
     <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">
-              <div class="copyright text-center text-muted" role="note">
-                  {{ footer|richtext }}
-              </div>
-          </h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+        <div class="row">
+
+            <div class="col l6 s12">
+                <h5 class="white-text">
+                    <div class="copyright text-center text-muted" role="note">
+                        {{ footer|richtext }}
+                    </div>
+                </h5>
+                <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+            </div>
+
+            <div class="col l3 s12">
+                <h5 class="white-text">Settings</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
+
+            <div class="col l3 s12">
+                <h5 class="white-text">Connect</h5>
+                <ul>
+                    <li><a class="white-text" href="#!">Link 1</a></li>
+                    <li><a class="white-text" href="#!">Link 2</a></li>
+                    <li><a class="white-text" href="#!">Link 3</a></li>
+                    <li><a class="white-text" href="#!">Link 4</a></li>
+                </ul>
+            </div>
 
 
+
         </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Settings</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="#!">Link 1</a></li>
-            <li><a class="white-text" href="#!">Link 2</a></li>
-            <li><a class="white-text" href="#!">Link 3</a></li>
-            <li><a class="white-text" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
+
     <div class="footer-copyright">
-      <div class="container">
-
-      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
-      </div>
+        <div class="container">
+            Made by <a class="orange-text " href="http://qizl.es">qizl.es</a>
+        </div>
     </div>
-  </footer>
+
+</footer>

@@ -4410,14 +4410,14 @@ nav .input-field label.active i {
 
 @media only screen and (min-width: 601px) {
   nav.nav-extended .nav-wrapper {
-    min-height: 180px;
+    min-height: 64px;
   }
   nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
-    height: 180px;
-    line-height: 180px;
+    height: 100px;
+    line-height: 100px;
   }
   .navbar-fixed {
-    height: 180px;
+    height: 100px;
   }
 }
 
