@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="description" content="" />
 
-        <title>{% block title %}CevenTravel - {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
+        <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
 
         {# Global stylesheets #}
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,15 +26,24 @@
         <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="{% static 'css/mysite.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 
+
+
+        {# favicon #}
+        <link rel="shortcut icon" href="{% static 'favicon.png' %}"/>
+
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
         {% endblock %}
     </head>
 
     <body>
-        {% getNavbar %}
+
+
+
+        {% include "includes/header.html" with parent=site_root calling_page=self %}
 
         <div class="container">
+
         </div>
 
         {% block content %}

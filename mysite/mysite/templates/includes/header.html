@@ -1,0 +1,83 @@
+{% load static wagtailuserbar %}
+{% load basetags %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load static %}
+
+
+{% load menu_tags %}
+
+
+<div class="navbar-fixed">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+
+            {% comment %}
+            <a id="logo-container" href="#" class="brand-logo"><img class="navlogo"
+                                                                    src="http://localhost:8000/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/"></a>
+                                                                    {% endcomment %}
+
+
+            {% comment %}
+            <a id="logo-container" href="#" class="brand-logo center">{{ navbar|richtext }}</a>
+
+
+
+              {% for items in menu_items %}
+                        {{ items }}
+                        <p class="red-text"> hello </p>
+                    {% endfor %}
+                    <p class="red"> {{ current_level  }}  </p>
+                    <p class="red"> hello </p></li>
+
+            {% endcomment %}
+
+
+            <ul id="nav-mobile" class="side-nav">
+
+                {% main_menu %}
+            </ul>
+
+
+
+            <a href="#" data-activates="nav-mobile" class="button-collapse white"><i
+                    class="material-icons blue-grey-text">menu</i></a>
+
+
+            <ul class="left hide-on-med-and-down">
+                <li>
+                    <a class="navlogo" href="/">
+                        <img class="navlogo" href="/"
+                             src="http://localhost:8000/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/">
+                    </a>
+                </li>
+                <li> {% main_menu %} </li>
+            </ul>
+
+
+            <ul class="center hide-on-large-only">
+                <ul class="center hide-on-small-and-down">
+                    <a class="navlogo" href="/">
+                        <img class="navlogo" href="/"
+                             src="http://localhost:8000/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/">
+                    </a>
+                </ul>
+            </ul>
+
+
+            <ul class="center hide-on-med-and-up">
+                <a id="logo-container" class="brand-logo center blue-text text-darken-4">
+                    <nobr><b>CEVEN</b><span class="weak">TRAVEL</span></nobr>
+                </a>
+            </ul>
+
+
+        </div>
+
+    </nav>
+
+</div>
+
+
+{% getNavbar %}

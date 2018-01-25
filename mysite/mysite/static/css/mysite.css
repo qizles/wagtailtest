@@ -2,13 +2,42 @@ img.navlogo {
     position: center;
     align-content: center;
 
-    top: 0; bottom:0; left: 0px; right:0;
-    margin-top: -10px;
-    margin-right: 50%;
+    top: 0;
+    bottom: 0;
+    left: 0px;
+    right: 10%;
+    margin-top: 0px;
+    margin-right: 20px;
     padding-top: 0px;
+
 }
 
+a.navlogo:hover {
+    background: none;
+}
 
 span.weak {
     font-weight: lighter;
+}
+
+
+
+nav ul a:hover {
+    background-color: rgba(255, 150, 20, 1);
+    color: white;
+}
+
+nav ul li.active {
+    background-color: rgba(100, 100, 255, 1);
+    color: yellow;
+}
+
+nav a.active {
+    background-color: rgba(100, 100, 255, 1);
+    color: yellow;
+}
+
+nav ul a.active {
+    background-color: rgba(255, 150, 20, 1);
+    color: white;
 }
