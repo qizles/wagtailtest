@@ -14,16 +14,13 @@
 
 
 
-
-
-
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center orange-text">Willkommen</h1>
+                <h1 class="header center orange-text">{{ page.welcomeheading }}</h1>
                 <div class="row center">
-                    <h5 class="header col s12 light ">bei <b>Ceven</b> Travel</h5>
+                    <h5 class="header col s12 light ">{{ page.subforhighlight }} <b>{{ page.subhighlight }} </b>{{ page.subafterhighlight }}</h5>
                 </div>
 
                 <br><br>
@@ -31,7 +28,7 @@
             </div>
         </div>
         <div class="parallax">
-            {% image page.backgroundimageone original %}
+            {% image page.backgroundimage original %}
         </div>
     </div>
 
@@ -47,12 +44,10 @@
                     <div class="card white z-depth-1">
                         <div class="icon-block">
 
-                            <h2 class="center orange-text"><i class="material-icons">flash_on</i></h2>
-                            <h5 class="center">Lorem Ipsum</h5>
+                            <h2 class="center orange-text"><i class="material-icons">{{ page.card1symbol }}</i></h2>
+                            <h5 class="center">{{ page.card1heading }}</h5>
 
-                            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
-                                id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum
-                                ac.</p>
+                            <p class="light">{{ page.card1text }}</p>
                         </div>
                     </div>
                 </div>
@@ -60,12 +55,10 @@
                 <div class="col s12 m4">
                     <div class="card white z-depth-5">
                         <div class="icon-block">
-                            <h2 class="center deep-orange-text"><i class="material-icons">group</i></h2>
-                            <h5 class="center">Lorem Ipsum</h5>
+                            <h2 class="center deep-orange-text"><i class="material-icons">{{ page.card2symbol }}</i></h2>
+                            <h5 class="center">{{ page.card2heading }}</h5>
 
-                            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
-                                id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum
-                                ac.</p>
+                            <p class="light">{{ page.card2text }}</p>
                         </div>
                     </div>
                 </div>
@@ -73,12 +66,10 @@
                 <div class="col s12 m4">
                     <div class="card white z-depth-1">
                         <div class="icon-block">
-                            <h2 class="center blue-grey-text"><i class="material-icons">settings</i></h2>
-                            <h5 class="center">Lorem Ipsum</h5>
+                            <h2 class="center blue-grey-text"><i class="material-icons">{{ page.card3symbol }}</i></h2>
+                            <h5 class="center">{{ page.card2heading }}</h5>
 
-                            <p class="light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque
-                                id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum
-                                ac.</p>
+                            <p class="light">{{ page.card2text }}</p>
                         </div>
                     </div>
                 </div>
@@ -92,11 +83,11 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">Lorem Ipsum</h5>
+                    <h5 class="header col s12 light">{{ page.imagemidsub }}</h5>
                 </div>
             </div>
         </div>
-        <div class="parallax">{% image page.backgroundimagetwo original %}</div>
+        <div class="parallax">{% image page.backgroundimage original %}</div>
     </div>
 
     <div class="container">
@@ -105,15 +96,8 @@
             <div class="row">
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4 class="orange-text">About Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna
-                        fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra
-                        ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam
-                        eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi
-                        massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non
-                        tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
-                        Curae;</p>
+                    <h4 class="orange-text">{{ page.para1heading }}</h4>
+                    <p class="left-align light">{{ page.para1sub }}</p>
                 </div>
             </div>
 
@@ -125,11 +109,11 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">Lorem Ipsum</h5>
+                    <h5 class="header col s12 light">{{ page.imageendsub }}</h5>
                 </div>
             </div>
         </div>
-        <div class="parallax">{% image page.backgroundimagethree original %}</div>
+        <div class="parallax">{% image page.backgroundimage original %}</div>
     </div>
 
 
@@ -140,8 +124,8 @@
             <div class="row">
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4 class="orange-text">Contact Us</h4>
-                    <p class="left-align light"> {{ page.text }} </p>
+                    <h4 class="orange-text">{{ page.para2heading }}</h4>
+                    <p class="left-align light"> {{ page.para2sub }} </p>
                 </div>
             </div>
 

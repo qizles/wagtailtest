@@ -5,30 +5,42 @@ from django.db.models import TextField
 from modelcluster.fields import ParentalKey
 
 from wagtail.wagtailcore.models import Page, Orderable
-from wagtail.wagtailcore.fields import RichTextField
+from wagtail.wagtailcore.fields import RichTextField, StreamField
+from wagtail.wagtailcore import blocks
 
-from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, MultiFieldPanel
+from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
 
 class HomePage(Page):
-    body = RichTextField(blank=True)
-    text = TextField(blank=True)
-    backgroundimageone = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
-    backgroundimagetwo = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
-    )
-    backgroundimagethree = models.ForeignKey(
+    welcomeheading = models.CharField(blank=True, max_length=30)
+    subforhighlight = models.CharField(blank=True, max_length=30)
+    subhighlight = models.CharField(blank=True, max_length=30)
+    subafterhighlight = models.CharField(blank=True, max_length=30)
+
+    card1heading = models.CharField(blank=True, max_length=30)
+    card1text = TextField(blank=True)
+    card1symbol = models.CharField(blank=True, max_length=30)
+    card2heading = models.CharField(blank=True, max_length=30)
+    card2text = TextField(blank=True)
+    card2symbol = models.CharField(blank=True, max_length=30)
+    card3heading = models.CharField(blank=True, max_length=30)
+    card3text = TextField(blank=True)
+    card3symbol = models.CharField(blank=True, max_length=30)
+
+
+    imagemidsub = models.CharField(blank=True, max_length=80)
+
+    para1heading = models.CharField(blank=True, max_length=30)
+    para1sub = models.TextField(blank=True)
+
+    imageendsub = models.CharField(blank=True, max_length=80)
+
+    para2heading = models.CharField(blank=True, max_length=30)
+    para2sub = models.TextField(blank=True)
+
+    backgroundimage = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
         blank=True,
@@ -37,11 +49,51 @@ class HomePage(Page):
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-        FieldPanel('text', classname="full"),
-        ImageChooserPanel('backgroundimageone'),
-        ImageChooserPanel('backgroundimagetwo'),
-        ImageChooserPanel('backgroundimagethree'),
+        MultiFieldPanel([
+            FieldPanel('welcomeheading'),
+            MultiFieldPanel([
+                FieldPanel('subforhighlight'),
+                FieldPanel('subhighlight'),
+                FieldPanel('subafterhighlight'),
+            ], heading="Welcome Sub Message"),
+        ], heading="Welcome Message"),
+
+        MultiFieldPanel([
+            MultiFieldPanel([
+                FieldPanel('card1heading'),
+                FieldPanel('card1text', classname="full"),
+                FieldPanel('card1symbol'),
+            ], heading="Card 1"),
+
+            MultiFieldPanel([
+                FieldPanel('card2heading'),
+                FieldPanel('card2text', classname="full"),
+                FieldPanel('card2symbol'),
+            ], heading="Card 2"),
+
+            MultiFieldPanel([
+                FieldPanel('card3heading'),
+                FieldPanel('card3text', classname="full"),
+                FieldPanel('card3symbol'),
+            ], heading="Card 3"),
+
+        ], heading="Cards"),
+
+        FieldPanel('imagemidsub', classname="full"),
+
+        MultiFieldPanel([
+            FieldPanel('para1heading'),
+            FieldPanel('para1sub', classname="full"),
+        ], heading="Paragraph 1"),
+
+        FieldPanel('imageendsub', classname="full"),
+
+        MultiFieldPanel([
+            FieldPanel('para2heading'),
+            FieldPanel('para2sub', classname="full"),
+        ], heading="Paragraph 2"),
+
+        ImageChooserPanel('backgroundimage'),
     ]
 
 
