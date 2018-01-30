@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 from __future__ import absolute_import, unicode_literals
 
+from wagtail.wagtailembeds.oembed_providers import youtube, vimeo
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -42,6 +45,8 @@ INSTALLED_APPS = [
     'wagtail.wagtailsearch',
     'wagtail.wagtailadmin',
     'wagtail.wagtailcore',
+
+    'wagtail.wagtailforms',
 
     'wagtail.contrib.modeladmin',
 
@@ -147,4 +152,11 @@ WAGTAIL_SITE_NAME = "mysite"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+WAGTAILEMBEDS_FINDERS = [
+    {
+        'class': 'wagtail.wagtailembeds.finders.oembed',
+        'providers': [youtube, vimeo],
+    }
+]
 

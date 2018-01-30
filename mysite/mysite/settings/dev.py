@@ -1,4 +1,6 @@
 from __future__ import absolute_import, unicode_literals
+from wagtail.wagtailembeds.oembed_providers import youtube, vimeo
+
 
 from .base import *
 
@@ -11,6 +13,13 @@ ALLOWED_HOSTS = ['*']
 SECRET_KEY = '-bwr19^)+1hqj3j9nmtc_i*_jer4%+%foscnhbhvlg6h0ycgj)'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+WAGTAILEMBEDS_FINDERS = [
+    {
+        'class': 'wagtail.wagtailembeds.finders.oembed',
+        'providers': [youtube, vimeo],
+    }
+]
 
 try:
     from .local import *

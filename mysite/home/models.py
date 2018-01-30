@@ -7,8 +7,10 @@ from modelcluster.fields import ParentalKey
 from wagtail.wagtailcore.models import Page, Orderable
 from wagtail.wagtailcore.fields import RichTextField, StreamField
 from wagtail.wagtailcore import blocks
+from wagtail.wagtailcore.blocks import TextBlock
 
 from wagtail.wagtailadmin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel, MultiFieldPanel
+from wagtail.wagtailforms.models import AbstractFormField, AbstractEmailForm
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 
@@ -98,7 +100,23 @@ class HomePage(Page):
 
 
 class ImpressumPage(Page):
-    text = TextField(blank=True)
+    body = RichTextField(blank=True)
+    intro = TextField(blank=True)
+    heading1 = models.CharField(blank=True, max_length=80)
+    text1 = TextField(blank=True)
+
+    heading2 = models.CharField(blank=True, max_length=80)
+    text2 = TextField(blank=True)
+
+    heading3 = models.CharField(blank=True, max_length=80)
+    text3 = TextField(blank=True)
+
+    heading4 = models.CharField(blank=True, max_length=80)
+    text4 = TextField(blank=True)
+
+    heading5 = models.CharField(blank=True, max_length=80)
+    text5 = TextField(blank=True)
+
     imageone = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
@@ -115,7 +133,33 @@ class ImpressumPage(Page):
     )
 
     content_panels = Page.content_panels + [
-        FieldPanel('text', classname="full"),
+        FieldPanel('body', classname="full"),
+        FieldPanel('intro', classname="full"),
+        MultiFieldPanel([
+            FieldPanel('heading1'),
+            FieldPanel('text1', classname="full"),
+        ], heading="Block 1"),
+
+        MultiFieldPanel([
+            FieldPanel('heading2'),
+            FieldPanel('text2', classname="full"),
+        ], heading="Block 2"),
+
+        MultiFieldPanel([
+            FieldPanel('heading3'),
+            FieldPanel('text3', classname="full"),
+        ], heading="Block 3"),
+
+        MultiFieldPanel([
+            FieldPanel('heading4'),
+            FieldPanel('text4', classname="full"),
+        ], heading="Block 4"),
+
+        MultiFieldPanel([
+            FieldPanel('heading5'),
+            FieldPanel('text5', classname="full"),
+        ], heading="Block 5"),
+
         ImageChooserPanel('imageone'),
         ImageChooserPanel('imagetwo'),
     ]
@@ -127,6 +171,14 @@ class AGBsPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('text', classname="full"),
 
+    ]
+
+
+class GenericPage(Page):
+    body = RichTextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
     ]
 
 
@@ -165,4 +217,39 @@ class AboutUsGalleryImage(Orderable):
     panels = [
         ImageChooserPanel('image'),
         FieldPanel('caption'),
+    ]
+
+
+class StreamFieldTestPage(Page):
+    body = StreamField([
+        ('heading', blocks.CharBlock(classname="full title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('text', blocks.TextBlock()),
+        ('image', ImageChooserBlock()),
+    ])
+    text = TextField(blank=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('text', classname="full"),
+        StreamFieldPanel('body'),
+    ]
+
+
+class FormField(AbstractFormField):
+    page = ParentalKey('FormPage', related_name='form_fields')
+
+
+class FormPage(AbstractEmailForm):
+    intro = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('intro', classname="full"),
+        InlinePanel('form_fields', label="Form fields"),
+        FieldPanel('thank_you_text', classname="full"),
+        MultiFieldPanel([
+            FieldPanel('to_address', classname="full"),
+            FieldPanel('from_address', classname="full"),
+            FieldPanel('subject', classname="full"),
+        ], "Email")
     ]

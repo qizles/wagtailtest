@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% load static %}
+
+
+{% block body_class %} template-homepage {% endblock %}
+
+
+
+
+{% block content %}
+
+    <div class="container">
+
+    <h1>{{ page.title }} </h1>
+    <br>
+
+    {{ page.body | richtext}}
+    <br><br><br><br>
+
+
+
+    {% image page.imageone original %}
+    {% image page.imagetwo original %}
+
+    </div>
+{% endblock %}
+
+
+{% comment %}
+    {{ page.title }}<br>
+    <br>
+    {{ page.intro }}<br>
+    <br>
+    {{ page.heading1 }}<br>
+    {{ page.text1 }}<br>
+    <br>
+    {{ page.heading2 }}<br>
+    {{ page.text2 }}<br>
+    <br>
+    {{ page.heading3 }}<br>
+    {{ page.text3 }}<br>
+    <br>
+    {{ page.heading4 }}<br>
+    {{ page.text4 }}<br>
+    <br>
+    {{ page.heading5 }}<br>
+    {{ page.text5 }}<br>
+{% endcomment %}
