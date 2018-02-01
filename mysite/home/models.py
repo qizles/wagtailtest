@@ -31,7 +31,6 @@ class HomePage(Page):
     card3text = TextField(blank=True)
     card3symbol = models.CharField(blank=True, max_length=30)
 
-
     imagemidsub = models.CharField(blank=True, max_length=80)
 
     para1heading = models.CharField(blank=True, max_length=30)
