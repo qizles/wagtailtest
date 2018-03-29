@@ -17,11 +17,13 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 850px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
+
   .parallax-container .section {
     width: 100%;
   }
@@ -51,4 +53,39 @@ p {
 
 footer.page-footer {
   margin: 0;
+}
+
+
+
+.pin-top {
+  position: static;
+}
+
+#columniwannapush2 .pin-top {
+  position: sticky;
+}
+#columniwannapush3 {
+  position: sticky;
+  position: -webkit-sticky;
+  top : 0;
+  z-index: 999;
+}
+
+#columniwannapush4 {
+  position: sticky;
+  position: -webkit-sticky;
+  top : 300px;
+}
+
+
+.pin-bottom {
+  position: relative;
+}
+
+.pinned {
+  position: fixed !important;
+}
+
+#stickyheader {
+  position: sticky;
 }

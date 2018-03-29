@@ -1,5 +1,6 @@
 {% load static wagtailuserbar %}
 {% load basetags %}
+{% load menu_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,17 +38,47 @@
     </head>
 
     <body>
-
-
-
-        {% include "includes/header.html" with parent=site_root calling_page=self %}
-
+        <div class="parallax-container" id="header-banner">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header center orange-text">Willkommen</h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light ">bei <b>Ceven </b>Travel</h5>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+            <div class="parallax">
+                <img src="http://localhost:8000/images/NCA3VE3LYOT3OnahZLERqu9ZzUI=/14/width-1920/">
+            </div>
+        </div>
         <div class="container">
-
         </div>
 
-        {% block content %}
-        {% endblock %}
+                <div id="columniwannapush3">
+                    {% include "includes/header.html" with parent=site_root calling_page=self %}
+                </div>
+
+            <div class="row">
+                <div class="col s12 m2">
+                    <div id="columniwannapush4">
+                        <li>
+                <a class="navlogo" href="/"><img class="navlogo" href="/"src="/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/"></a>
+                </li>
+                        <li><a class="passive"  href="/">Ueber Uns</a></li>
+                        <li><a class="passive"  href="/">Galerie</a></li>
+                        <li><a class="passive"  href="/">Gaestebuch</a></li>
+                        <li><a class="passive"  href="/">Kontakt</a></li>
+                    </div>
+                </div>
+                <div class="col s12 m10">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+
 
 
         {% getFooter %}
