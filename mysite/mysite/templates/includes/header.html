@@ -5,7 +5,20 @@
 {% load menu_tags %}
 
     <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper">
+
+        <div class="row">
+                <div class="col s12 m2">
+                <a class="brand-logo left" href="/"><img class="navlogo" href="/"src="/images/IXokSw3cglo_q7YvEVzZ2amRiHQ=/4/height-100/"></a>
+
+                </div>
+        <div class="col s12 m10">
+
+
+
+
+
+
 
             {% comment %}
                 <div class="navbar-fixed">
@@ -32,8 +45,10 @@
                     class="material-icons blue-grey-text">menu</i></a>
             {% endcomment %}
 
-            <ul class="left hide-on-med-and-down">
-                <li> {% main_menu %} </li>
+
+            <ul class="center hide-on-med-and-down">
+
+               {% main_menu %}
             </ul>
 
 
@@ -49,5 +64,11 @@
                 </a>
             </ul>
         </div>
+
+
+
+
+        </div>
+
     </nav>
 {% getNavbar %}

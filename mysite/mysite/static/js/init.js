@@ -3,8 +3,14 @@
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
-    $('#columniwannapush').pushpin({
-        top: $('#columniwannapush').offset().top,
+
+    $('#sidenavcontainer').pushpin({
+
+
+        top: $('#sidenavcontainer').offset().top + 50,
+        offset : 120,
+        bottom: ($(document).height() - 795),
+        //bottom: $('#sidenavcontainer').offset().top + 800,
         //bottom: columniwannapush.offset().top + columniwannapush.outerHeight() - columniwannapush.height()
     });
 

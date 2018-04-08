@@ -17,11 +17,24 @@ p {
 }
 
 .parallax-container {
-  min-height: 850px;
+  min-height: 200px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
+
+#header-container{
+  height: 90vh;
+}
+
+#header-banner{
+  min-height: 90vh;
+}
+
+#header-text{
+  margin-top: 100px;
+}
+
 
 
   .parallax-container .section {
@@ -57,9 +70,24 @@ footer.page-footer {
 
 
 
-.pin-top {
-  position: static;
+#sidenavcontainer.pin-top {
+  margin-top: 80px;
+
 }
+
+#sidenavcontainer.pin-bottom {
+  margin-top: 25px;
+  margin-bottom: 0px;
+
+}
+
+#sidenavcontainer.pinned {
+  position: sticky;
+  margin-top: 10px;
+  width: 15.5%;
+
+}
+
 
 #columniwannapush2 .pin-top {
   position: sticky;
@@ -67,25 +95,34 @@ footer.page-footer {
 #columniwannapush3 {
   position: sticky;
   position: -webkit-sticky;
+
+  top : 0;
+  z-index: 999;
+}
+
+#columniwannapush5 {
+  position: sticky;
+  position: -webkit-sticky;
   top : 0;
   z-index: 999;
 }
 
 #columniwannapush4 {
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
   top : 300px;
 }
 
 
-.pin-bottom {
-  position: relative;
-}
 
-.pinned {
-  position: fixed !important;
-}
 
 #stickyheader {
   position: sticky;
+}
+
+#sidemenu
+{
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 300px;
 }
